@@ -6,42 +6,71 @@
     <title>Document</title>
   </head>
   <body>
-    <table>
-      <tr>
-        <colspan>SỞ THÍCH CỦA BẠN</colspan>
-      </tr>
-      <tr>
-        <td>Họ và tên</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td><input type="text" /></td>
-      </tr>
-      <tr>
-        <td>Sở thích</td>
-        <td>
-          <input type="checkbox" name="sothich" />Thể thao
-          <input type="checkbox" name="sothich" />Âm nhạc
-          <input type="checkbox" name="sothich" />Đọc sách
-        </td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <input type="checkbox" name="sothich" />Lướt web
-          <input type="checkbox" name="sothich" />Chơi game
-          <input type="checkbox" name="sothich" />Điện ảnh
-        </td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><input type="checkbox" name="sothich" />Du lịch</td>
-      </tr>
-      <tr>
-        <td><button>Gửi lại thông tin</button></td>
-        <td><button>Nhập lại</button></td>
-      </tr>
-    </table>
+    <style>
+      * {
+      }
+      body {
+        margin: 20px auto;
+        width: 50%;
+        background-color: lightblue;
+      }
+      div {
+        background-color: white;
+      }
+      .namehead {
+        background-color: orangered;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      p {
+        color: blue;
+      }
+      .sothich {
+        color: orangered;
+      }
+    </style>
+    <div class="form">
+      <table class="table">
+        <tr>
+          <colspan><h2 class="namehead">sở thích của bạn</h2></colspan>
+        </tr>
+        <tr>
+          <td><p>Họ và tên</p></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><p>Email</p></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><p>Sở thích</p></td>
+          <td class="sothich">
+            <input type="checkbox" name="sothich" />Thể thao
+            <input type="checkbox" name="sothich" />Âm nhạc
+            <input type="checkbox" name="sothich" />Đọc sách
+          </td>
+        </tr>
+        <tr class="sothich">
+          <td></td>
+          <td>
+            <input type="checkbox" name="sothich" />Lướt web
+            <input type="checkbox" name="sothich" />Chơi game
+            <input type="checkbox" name="sothich" />Điện ảnh
+          </td>
+        </tr>
+        <tr class="sothich">
+          <td></td>
+          <td><input type="checkbox" name="sothich" />Du lịch</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button>Gửi lại thông tin</button>
+            <button>Nhập lại</button>
+          </td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>

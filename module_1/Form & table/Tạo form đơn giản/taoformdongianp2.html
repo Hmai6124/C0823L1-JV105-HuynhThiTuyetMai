@@ -6,27 +6,40 @@
     <title>Document</title>
   </head>
   <body>
+    <style>
+      body {
+        background-color: lightgoldenrodyellow;
+      }
+      p {
+        color: blue;
+      }
+      h2 {
+        background-color: aquamarine;
+        color: blue;
+        text-transform: uppercase;
+      }
+    </style>
     <table>
       <tr>
-        ĐĂNG KÝ HỌC VIÊN
+        <h2>đăng ký học viên</h2>
       </tr>
       <tr>
-        <td>Họ và tên</td>
+        <td><p>Họ và tên</p></td>
         <td><input type="text" /></td>
       </tr>
       <tr>
-        <td>Ngày sinh</td>
+        <td><p>Ngày sinh</p></td>
         <td><input type="text" /></td>
       </tr>
       <tr>
-        <td>Giới tính</td>
+        <td><p>Giới tính</p></td>
         <td>
           <input type="radio" name="gioitinh" value="nam" />Nam
           <input type="radio" name="gioitinh" value="nu" />Nữ
         </td>
       </tr>
       <tr>
-        <td>Lớp</td>
+        <td><p>Lớp</p></td>
         <td>
           <select>
             <option>Chọn lớp</option>
@@ -35,16 +48,19 @@
         </td>
       </tr>
       <tr>
-        <td>Email</td>
+        <td><p>Email</p></td>
         <td><input type="text" /></td>
       </tr>
       <tr>
-        <td>Điện thoại</td>
+        <td><p>Điện thoại</p></td>
         <td><input type="text" /></td>
       </tr>
       <tr>
-        <td><button>Gửi lại thông tin</button></td>
-        <td><button>Nhập lại</button></td>
+        <td></td>
+        <td>
+          <button>Gửi lại thông tin</button>
+          <button>Nhập lại</button>
+        </td>
       </tr>
     </table>
   </body>
