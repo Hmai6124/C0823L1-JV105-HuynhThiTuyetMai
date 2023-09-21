@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập biến, kiểu dữ liệu và toán tử Bài 3</title>
+  </head>
+  <body>
+    <div>Bán kính R <input type="number" id="bankinh" /></div>
+    <div><input type="button" value="Nhập" onclick="convert()" /></div>
+    <br />
+    <div id="chuvihinhtron"></div>
+  </body>
+  <script>
+    function convert() {
+      let r = document.getElementById("bankinh").value;
+      let s = +(r * 2 * 3.14);
+      document.getElementById("chuvihinhtron").innerText =
+        "Chu vi hình tròn" + s;
+    }
+  </script>
+</html>

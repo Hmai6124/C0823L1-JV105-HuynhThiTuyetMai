@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập biến, kiểu dữ liệu và toán tử Bài 1</title>
+  </head>
+  <body>
+    <div>Điểm vật lý <input type="number" id="diemvatly" /></div>
+    <br />
+    <div>Điểm hóa học <input type="number" id="diemhoahoc" /></div>
+    <br />
+    <div>Điểm sinh học <input type="number" id="diemsinhhoc" /></div>
+    <br />
+    <div>
+      <input type="button" value="Nhập" onclick="convert()" />
+    </div>
+    <br />
+    <div id="diemtrungbinh"></div>
+    <br />
+    <div id="diemtong"></div>
+  </body>
+  <script>
+    function convert() {
+      let vatly = +document.getElementById("diemvatly").value;
+      let hoahoc = +document.getElementById("diemhoahoc").value;
+      let sinhhoc = +document.getElementById("diemsinhhoc").value;
+      let diemtrungbinh = (vatly + hoahoc + sinhhoc) / 3;
+      let diemtong = vatly + hoahoc + sinhhoc;
+      document.getElementById("diemtrungbinh").innerText =
+        "Điểm trung bình:" + diemtrungbinh;
+      document.getElementById("diemtong").innerText = "Điểm tổng:" + diemtong;
+    }
+  </script>
+</html>
