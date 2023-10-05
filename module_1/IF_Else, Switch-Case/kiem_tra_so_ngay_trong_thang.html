@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra số ngày trong tháng</title>
+  </head>
+  <body>
+    <b>Kiểm tra số ngày trong tháng</b>
+    <br />
+    <input type="number" placeholder="Nhập tháng" min="1" max="12" id="thang" />
+    <br />
+    <input type="button" value="Check" onclick="checkThang()" />
+    <div id="result">Đây là nơi hiển thị kết quả</div>
+  </body>
+  <script>
+    function checkThang() {
+      let thang = parentInt(document.getElementById("thang").value);
+      let resultElement = document.getElementById("result");
+      switch (thang) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+          resultElement.innerText = "Tháng" + thang + "có 31 ngày";
+          break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          resultElement.innerText = "Tháng" + thang + "có 30 ngày";
+          break;
+        case 2:
+          resultElement.innerText = "Tháng" + thang + "có 28 hoặc 29 ngày";
+          break;
+        default:
+          resultElement.innerText = "Đã nhập sai vui lòng nhập lại";
+      }
+    }
+  </script>
+</html>
