@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LTCTDK-02-Bài 10</title>
+  </head>
+  <body>
+    <h1>Viết chương trình tính giá điện.</h1>
+    <script>
+      let soDienTieuThu = parseFloat(prompt("Nhập số điện tiêu thụ (kWh):"));
+      let giaDien;
+      let thanhTien;
+      if (!isNaN(soDienTieuThu)) {
+        if (soDienTieuThu <= 50) {
+          giaDien = 1500;
+          thanhTien = soDienTieuThu * giaDien;
+        } else {
+          giaDien = 2000;
+          thanhTien = 50 * 1500 + (soDienTieuThu - 50) * giaDien;
+        }
+        document.write("Số điện tiêu thụ: " + soDienTieuThu + " kWh");
+        document.write("Giá điện: " + giaDien + " đ/kWh");
+        document.write("Thành tiền: " + thanhTien + " đ");
+      } else {
+        alert("Nhập không chính xác");
+      }
+    </script>
+  </body>
+</html>

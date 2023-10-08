@@ -2,21 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>LTCTDK-02-Bài 7</title>
   </head>
   <body>
+    <h1>Giải phương trình bậc 2</h1>
     <script>
       let a = parseInt(prompt("Nhap a"));
-      document.write("a = " + a + "<br>");
       let b = parseInt(prompt("Nhap b"));
-      document.write("b = " + b + "<br>");
       let c = parseInt(prompt("Nhap c"));
-      document.write("c =" + c + "<br>");
       let delta = b * b - 4 * a * c;
       let deta = Math.sqrt(delta);
-
       if (delta < 0) {
-        document.write("Phuong trinh vo nghiem");
+        document.write("Phương trình vô nghiệm");
       } else if (delta == 0) {
         document.write("Phương trình có nghiệm kép " + -b / (2 * a));
       } else {

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LTCTDK-01-Bài 7</title>
+  </head>
+  <body>
+    <h1>Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</h1>
+    <script>
+      let soPhutGoi = parseFloat(prompt("Số phút đã gọi: "));
+      let soTinNhan = parseFloat(prompt("Số tin nhắn đã nhắn: "));
+      let soGBDulieu = parseFloat(prompt("Số GB dữ liệu đã dùng: "));
+      let phiCuocCoBan = 1590;
+      let phiTinNhanVuot = 200;
+      let phiPhutGoiVuot = 1190;
+      let phiDuLieuVuot = 890;
+      let tongCuoc = phiCuocCoBan;
+
+      if (soPhutGoi > 100) {
+        tongCuoc += (soPhutGoi - 100) * phiPhutGoiVuot;
+      }
+
+      if (soTinNhan > 100) {
+        tongCuoc += (soTinNhan - 100) * phiTinNhanVuot;
+      }
+
+      if (soGBDuLieu > 10) {
+        tongCuoc += (soGBDuLieu - 10) * phiDuLieuVuot;
+      }
+      alert("Tổng cước điện thoại: " + tongCuoc.toFixed(2));
+    </script>
+  </body>
+</html>

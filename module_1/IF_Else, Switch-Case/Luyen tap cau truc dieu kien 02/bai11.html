@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>Viết chương trình tính thuế thu nhập cá nhân.</h1>
+    <script>
+      let thuNhap = parseFloat(prompt("Nhập thu nhập cá nhân (VNĐ):"));
+      let thue;
+      let thueThuNhap;
+      if (!isNaN(thuNhap)) {
+        if (thuNhap <= 5000000) {
+          thue = 0.05;
+          thueThuNhap = thuNhap * thue;
+        } else if (thuNhap <= 10000000) {
+          thue = 0.1;
+          thueThuNhap = 5000000 * 0.05 + (thuNhap - 5000000) * thue;
+        } else if (thuNhap <= 18000000) {
+          thue = 0.15;
+          thueThuNhap =
+            5000000 * 0.05 + 5000000 * 0.1 + (thuNhap - 10000000) * thue;
+        } else {
+          thue = 0.2;
+          thueThuNhap =
+            5000000 * 0.05 +
+            5000000 * 0.1 +
+            8000000 * 0.15 +
+            (thuNhap - 18000000) * thue;
+        }
+        document.write("Thu nhập cá nhân: " + thuNhap + " VNĐ");
+        document.write("Thuế thu nhập: " + thueThuNhap + " VNĐ");
+      } else {
+        alert("Nhập không hợp lệ");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LTCTDK-01-Bài 5</title>
+  </head>
+  <body>
+    <h1>
+      Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi
+      giữa kỳ, điểm thi cuối kỳ
+    </h1>
+    <script>
+      let baiKiemTra = parseFloat(prompt("Nhập điểm bài kiểm tra:"));
+      let thiGiuaKi = parseFloat(prompt("Nhập điểm thi giữa kỳ:"));
+      let thiCuoiKi = parseFloat(prompt("Nhâp điểm thi cuối kỳ:"));
+      let diemTrungBinh = (baiKiemTra + thiGiuaKi + thiCuoiKi) / 3;
+      let xepHang;
+      switch (true) {
+        case diemTrungBinh >= 9:
+          xepHang = alert("Xuất Sắc");
+          break;
+        case diemTrungBinh >= 8:
+          xepHang = alert("Giỏi");
+          break;
+        case diemTrungBinh >= 6.5:
+          xepHang = alert("Khá");
+          break;
+        case diemTrungBinh >= 5:
+          xepHang = alert("Trung bình");
+          break;
+        case diemTrungBinh >= 3.5:
+          xepHang = alert("Yếu");
+          break;
+        case diemTrungBinh >= 2.0:
+          xepHang = alert("Kém");
+          break;
+      }
+    </script>
+  </body>
+</html>

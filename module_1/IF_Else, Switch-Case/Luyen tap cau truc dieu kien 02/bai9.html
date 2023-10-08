@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LTCTDK-02-Bài 9</title>
+  </head>
+  <body>
+    <h1>
+      Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.
+    </h1>
+    <script>
+      let a = parseFloat(prompt("Nhập cạnh a"));
+      let b = parseFloat(prompt("Nhập cạnh b"));
+      let c = parseFloat(prompt("Nhập cạch c"));
+      if (a > 0 && b > 0 && c > 0) {
+        if (a + b > c && b + c > a && a + c > b) {
+          alert("Đây là tam giác");
+        } else {
+          alert("Đây không phải là tam tam");
+        }
+      } else {
+        alert("Đây không phải là tam giác");
+      }
+    </script>
+  </body>
+</html>

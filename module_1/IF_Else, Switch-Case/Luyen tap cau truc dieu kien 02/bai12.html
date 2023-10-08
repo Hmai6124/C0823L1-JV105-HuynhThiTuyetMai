@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LTCTDL-02-Bài 12</title>
+  </head>
+  <body>
+    <h1>
+      Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền
+      ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+    </h1>
+    <script>
+      let soTienBanDau = parseFloat(prompt("Nhập số tiền ban đầu (VNĐ):"));
+      let soThangChoVay = parseInt(prompt("Nhập số tháng cho vay:"));
+      let laiSuatHangThang = parseFloat(
+        prompt("Nhập lãi suất hàng tháng (%):")
+      );
+      if (
+        !isNaN(soTienBanDau) &&
+        !isNaN(soThangChoVay) &&
+        !isNaN(laiSuatHangThang)
+      ) {
+        laiSuatHangThang /= 100;
+        let tongTien = soTienBanDau;
+        for (let i = 0; i < soThangChoVay; i++) {
+          let laiHangThang = tongTien * laiSuatHangThang;
+          tongTien += laiHangThang;
+        }
+        let laiTongCong = tongTien - soTienBanDau;
+        document.write("Số tiền ban đầu: " + soTienBanDau + " VNĐ");
+        document.write("Số tháng cho vay: " + soThangChoVay);
+        document.write("Lãi suất hàng tháng: " + laiSuatHangThang * 100 + "%");
+        document.write(
+          "Tổng số tiền sau " + soThangChoVay + " tháng: " + tongTien + " VNĐ"
+        );
+        document.write("Lãi tổng cộng: " + laiTongCong + " VNĐ");
+      } else {
+        document.write("Giá trị không hợp lệ. Vui lòng nhập số hợp lệ.");
+      }
+    </script>
+  </body>
+</html>
