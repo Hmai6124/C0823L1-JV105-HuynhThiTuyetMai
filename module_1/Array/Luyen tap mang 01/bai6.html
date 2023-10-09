@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-01-Bài 6</title>
+  </head>
+  <body>
+    <p></p>
+    <script>
+      function daoNguocMang() {
+        let mang = []; // Khởi tạo mảng số nguyên
+
+        // Yêu cầu người dùng nhập số lượng phần tử trong mảng
+        let soLuong = parseInt(prompt("Nhập số lượng phần tử trong mảng: "));
+
+        // Yêu cầu người dùng nhập từng phần tử và thêm vào mảng
+        for (let i = 0; i < soLuong; i++) {
+          let soNguyen = parseInt(
+            prompt("Nhập số nguyên thứ " + (i + 1) + ": ")
+          );
+          mang.push(soNguyen);
+        }
+
+        document.write("Mảng ban đầu: " + mang);
+
+        // Đảo ngược các phần tử trong mảng
+        let mangDaoNguoc = mang.reverse();
+
+        document.write("Mảng sau khi đảo ngược: " + mangDaoNguoc);
+      }
+
+      daoNguocMang();
+    </script>
+  </body>
+</html>

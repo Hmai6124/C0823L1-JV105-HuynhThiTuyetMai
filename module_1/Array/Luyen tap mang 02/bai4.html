@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-02-Bài 4</title>
+  </head>
+  <body>
+    <p>Viết một chương trình để đếm số từ trong một chuỗi</p>
+    <script>
+      function demSoKyTuSo() {
+        let mangKyTu = prompt("Nhập mảng ký tự, phân tách bởi dấu cách:").split(
+          " "
+        );
+        let kichThuocMang = mangKyTu.length;
+        let dem = 0;
+
+        for (let i = 0; i < kichThuocMang; i++) {
+          if (!isNaN(parseInt(mangKyTu[i]))) {
+            dem++;
+          }
+        }
+
+        document.write("Số ký tự số trong mảng: " + dem);
+      }
+
+      demSoKyTuSo();
+    </script>
+  </body>
+</html>

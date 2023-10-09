@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-01-Bài 2</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương
+      trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí
+      của phần tử đó.
+    </p>
+    <script>
+      function timPhanTuLonNhatVaViTri() {
+        let mang = []; // Khởi tạo mảng số nguyên
+        let max = Number.MIN_SAFE_INTEGER; // Biến để lưu giá trị lớn nhất
+        let viTriMax = -1; // Biến để lưu vị trí của phần tử lớn nhất
+
+        // Khởi tạo mảng số nguyên gồm 10 phần tử khác nhau
+        for (let i = 0; i < 10; i++) {
+          let soNguyen = parseInt(
+            prompt("Nhập số nguyên thứ " + (i + 1) + ": ")
+          );
+          mang.push(soNguyen);
+        }
+
+        // Tìm phần tử lớn nhất và vị trí của nó
+        for (let i = 0; i < mang.length; i++) {
+          if (mang[i] > max) {
+            max = mang[i];
+            viTriMax = i;
+          }
+        }
+
+        document.write("Phần tử lớn nhất trong mảng là: " + max);
+        document.write("Vị trí của phần tử lớn nhất là: " + viTriMax);
+      }
+
+      timPhanTuLonNhatVaViTri();
+    </script>
+  </body>
+</html>

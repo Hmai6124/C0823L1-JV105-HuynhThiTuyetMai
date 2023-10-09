@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-01-Bài 7</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử,
+      nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã
+      cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở
+      đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần
+      tử cuối cùng của mảng)
+    </p>
+    <script>
+      function xoaPhanTuTrongMang() {
+        let mang = []; // Khởi tạo mảng số nguyên
+        let soLuong = 10; // Số lượng phần tử trong mảng
+
+        // Yêu cầu người dùng nhập từng phần tử và thêm vào mảng
+        for (let i = 0; i < soLuong; i++) {
+          let soNguyen = parseInt(
+            prompt("Nhập số nguyên thứ " + (i + 1) + ": ")
+          );
+          mang.push(soNguyen);
+        }
+
+        document.write("Mảng ban đầu: " + mang);
+
+        let v = parseInt(prompt("Nhập số nguyên V: "));
+
+        // Kiểm tra xem V có thuộc mảng hay không
+        let index = mang.indexOf(v);
+        if (index !== -1) {
+          // Xoá V khỏi mảng
+          mang.splice(index, 1);
+          mang.push(0);
+          document.write("Mảng sau khi xoá " + v + ": " + mang);
+        } else {
+          document.write(v + " không thuộc mảng.");
+        }
+      }
+
+      xoaPhanTuTrongMang();
+    </script>
+  </body>
+</html>

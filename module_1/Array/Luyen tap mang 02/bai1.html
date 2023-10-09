@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-02-Bài 1</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn, in
+      ra các phần tử trong mảng. Chú ý: Sử dụng vòng lặp for lồng nhau
+    </p>
+    <script>
+      function khoiTaoVaInMang2Chieu() {
+        let mang2Chieu = [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+        ];
+
+        console.log("Các phần tử trong mảng 2 chiều:");
+        for (let i = 0; i < mang2Chieu.length; i++) {
+          for (let j = 0; j < mang2Chieu[i].length; j++) {
+            document.write(mang2Chieu[i][j]);
+          }
+        }
+      }
+      khoiTaoVaInMang2Chieu();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-01-Bài 3</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất
+      trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+    </p>
+    <script>
+      function timGiaTriLonNhatVaTinhGiaTriTrungBinh() {
+        let mang = []; // Khởi tạo mảng số nguyên
+        let max = Number.MIN_SAFE_INTEGER; // Biến để lưu giá trị lớn nhất
+        let sum = 0; // Biến để tính tổng các phần tử
+        let giaTriTrungBinh = 0; // Biến để lưu giá trị trung bình
+
+        // Yêu cầu người dùng nhập số lượng phần tử trong mảng
+        let soLuong = parseInt(prompt("Nhập số lượng phần tử trong mảng: "));
+
+        // Yêu cầu người dùng nhập từng phần tử và thêm vào mảng
+        for (let i = 0; i < soLuong; i++) {
+          let soNguyen = parseInt(
+            prompt("Nhập số nguyên thứ " + (i + 1) + ": ")
+          );
+          mang.push(soNguyen);
+          sum += soNguyen;
+          if (soNguyen > max) {
+            max = soNguyen;
+          }
+        }
+
+        giaTriTrungBinh = sum / soLuong;
+
+        console.log("Giá trị lớn nhất trong mảng là: " + max);
+        console.log(
+          "Giá trị trung bình của các phần tử trong mảng là: " + giaTriTrungBinh
+        );
+      }
+
+      timGiaTriLonNhatVaTinhGiaTriTrungBinh();
+    </script>
+  </body>
+</html>

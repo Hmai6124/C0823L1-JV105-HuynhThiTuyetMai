@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-02-Bài 2</title>
+  </head>
+  <body>
+    <p>
+      Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo
+      ngược. Ví dụ, nếu một mảng chứa các ký tự [ 'c', 's', 'c', '2', '6', '1' ]
+      sau khi thực hiện đảo ngược sẽ là "162csc"
+    </p>
+    <script>
+      function inMangDaoNguoc() {
+        let mangKyTu = ["c", "s", "c", "2", "6", "1"];
+        let mangDaoNguoc = mangKyTu.reverse();
+
+        let chuoiDaoNguoc = mangDaoNguoc.join("");
+
+        document.write("Kết quả sau khi đảo ngược: " + chuoiDaoNguoc);
+      }
+
+      inMangDaoNguoc();
+    </script>
+  </body>
+</html>

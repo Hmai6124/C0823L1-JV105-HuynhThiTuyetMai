@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-01-Bài 9</title>
+  </head>
+  <body>
+    <p>
+      Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi
+      là mảng a và b. Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+      Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+      Hiển thị mảng c.
+    </p>
+    <script>
+      function noiMangAB() {
+        let mangA = []; // Mảng a
+        let mangB = []; // Mảng b
+        let mangC = []; // Mảng c
+
+        let soLuong = 10; // Số lượng phần tử trong mỗi mảng
+
+        // Yêu cầu người dùng nhập từng phần tử cho mảng a
+        document.write("Nhập các phần tử cho mảng a:");
+        for (let i = 0; i < soLuong; i++) {
+          let soNguyen = parseInt(
+            prompt("Nhập số nguyên thứ " + (i + 1) + " của mảng a: ")
+          );
+          mangA.push(soNguyen);
+        }
+
+        // Yêu cầu người dùng nhập từng phần tử cho mảng b
+        document.write("Nhập các phần tử cho mảng b:");
+        for (let i = 0; i < soLuong; i++) {
+          let soNguyen = parseInt(
+            prompt("Nhập số nguyên thứ " + (i + 1) + " của mảng b: ")
+          );
+          mangB.push(soNguyen);
+        }
+
+        // Nối các phần tử từ mảng b và a vào mảng c
+        mangC = mangB.concat(mangA);
+
+        document.write("Mảng c sau khi nối: " + mangC);
+      }
+
+      noiMangAB();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-02-Bài 3</title>
+  </head>
+  <body>
+    <p>
+      Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+      Chương trình này đếm số ký tự số trong mảng.
+    </p>
+    <script>
+      function demSoKyTuSo() {
+        let mangKyTu = ["a", "1", "b", "2", "c", "3", "d", "4", "e", "5"];
+        let kichThuocMang = mangKyTu.length;
+        let dem = 0;
+
+        for (let i = 0; i < kichThuocMang; i++) {
+          if (!isNaN(parseInt(mangKyTu[i]))) {
+            dem++;
+          }
+        }
+
+        console.log("Số ký tự số trong mảng: " + dem);
+      }
+
+      demSoKyTuSo();
+    </script>
+  </body>
+</html>

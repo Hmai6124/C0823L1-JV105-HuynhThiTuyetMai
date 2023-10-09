@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTM-01-Bài 5</title>
+  </head>
+  <body>
+    <p>Viết chương trình đếm số nguyên âm trong một chuỗi</p>
+    <script>
+      function demSoNguyenAmTrongChuoi(chuoi) {
+        let dem = 0; // Biến đếm số nguyên âm
+
+        // Duyệt qua từng ký tự trong chuỗi
+        for (let i = 0; i < chuoi.length; i++) {
+          let kyTu = chuoi[i];
+
+          // Kiểm tra nếu ký tự là một số nguyên âm
+          if (/[aeiou]/i.test(kyTu)) {
+            dem++;
+          }
+        }
+
+        return dem;
+      }
+
+      // Chương trình chính
+      let chuoi = prompt("Nhập vào một chuỗi: ");
+      let soNguyenAm = demSoNguyenAmTrongChuoi(chuoi);
+
+      document.write("Số nguyên âm trong chuỗi là: " + soNguyenAm);
+    </script>
+  </body>
+</html>

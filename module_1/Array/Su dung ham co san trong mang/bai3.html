@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDHCS-03</title>
+  </head>
+  <body>
+    <p>
+      Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường
+      trong chuỗi vừa nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào
+      chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN
+      fOX'.
+    </p>
+    <script>
+      function chuyen_doi_chu_hoa(chuoi) {
+        let chuoi_chuyen_doi = "";
+        for (let i = 0; i < chuoi.length; i++) {
+          let ky_tu = chuoi[i];
+          if (ky_tu >= "a" && ky_tu <= "z") {
+            ky_tu = ky_tu.toUpperCase();
+          }
+          chuoi_chuyen_doi += ky_tu;
+        }
+        return chuoi_chuyen_doi;
+      }
+
+      let chuoi = prompt("Nhập vào một chuỗi: ");
+      let chuoi_chuyen_doi = chuyen_doi_chu_hoa(chuoi);
+      document.write("Kết quả: " + chuoi_chuyen_doi);
+    </script>
+  </body>
+</html>
