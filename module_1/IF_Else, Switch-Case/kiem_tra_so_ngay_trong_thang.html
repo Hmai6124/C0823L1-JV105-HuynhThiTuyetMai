@@ -15,7 +15,7 @@
   </body>
   <script>
     function checkThang() {
-      let thang = parentInt(document.getElementById("thang").value);
+      let thang = parseInt(document.getElementById("thang").value);
       let resultElement = document.getElementById("result");
       switch (thang) {
         case 1:
@@ -25,16 +25,16 @@
         case 8:
         case 10:
         case 12:
-          resultElement.innerText = "Tháng" + thang + "có 31 ngày";
+          resultElement.innerText = "Tháng " + thang + " có 31 ngày";
           break;
         case 4:
         case 6:
         case 9:
         case 11:
-          resultElement.innerText = "Tháng" + thang + "có 30 ngày";
+          resultElement.innerText = "Tháng " + thang + " có 30 ngày";
           break;
         case 2:
-          resultElement.innerText = "Tháng" + thang + "có 28 hoặc 29 ngày";
+          resultElement.innerText = "Tháng " + thang + " có 28 hoặc 29 ngày";
           break;
         default:
           resultElement.innerText = "Đã nhập sai vui lòng nhập lại";

@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>Hiển thị số nguyên đầu tiên</title>
   </head>
   <body>
     <script>
-      let numbers = parseInt(prompt("nhap so: "));
+      let num = parseInt(prompt("nhap so: "));
       let count = 0;
       let N = 2;
-      while (count < numbers) {
+      while (count < num) {
         let count2 = 0;
         for (let i = 2; i <= Math.sqrt(N); i++) {
           if (N % i === 0) {

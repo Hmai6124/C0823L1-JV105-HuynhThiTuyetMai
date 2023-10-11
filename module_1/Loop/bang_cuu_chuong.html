@@ -8,12 +8,12 @@
     <div id="table"></div>
     <script>
       let html = "<table border='1' cellpadding='3' cellspacing='0'>";
-      for (let row = 1; row <= 9; row++) {
+      for (let hang = 1; hang <= 9; hang++) {
         html += "<tr>";
-        for (let col = 1; col <= 9; col++) {
-          let result = row * col;
+        for (let cot = 1; cot <= 9; cot++) {
+          let result = hang * cot;
           html += "<td>";
-          html += col + " x " + row + " = " + result;
+          html += cot + " x " + hang + " = " + result;
         }
       }
 
