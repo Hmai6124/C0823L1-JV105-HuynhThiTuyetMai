@@ -6,23 +6,35 @@
   </head>
   <body>
     <h1>Viết chương trình tính giá điện.</h1>
+    <label>Nhập số điện tiêu thụ (kWh):</label>
+    <input type="number" id="dien" />
+    <input type="button" value="Tính tiền điện" onclick="tinh()" />
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
     <script>
-      let soDienTieuThu = parseFloat(prompt("Nhập số điện tiêu thụ (kWh):"));
-      let giaDien;
-      let thanhTien;
-      if (!isNaN(soDienTieuThu)) {
-        if (soDienTieuThu <= 50) {
-          giaDien = 1500;
-          thanhTien = soDienTieuThu * giaDien;
+      function tinh() {
+        let soDienTieuThu = parseFloat(document.getElementById("dien").value);
+        let giaDien;
+        let thanhTien;
+        let resultElement1 = document.getElementById("result1");
+        let resultElement2 = document.getElementById("result2");
+        let resultElement3 = document.getElementById("result3");
+        if (!isNaN(soDienTieuThu)) {
+          if (soDienTieuThu <= 50) {
+            giaDien = 1500;
+            thanhTien = soDienTieuThu * giaDien;
+          } else {
+            giaDien = 2000;
+            thanhTien = 50 * 1500 + (soDienTieuThu - 50) * giaDien;
+          }
+          resultElement1.innerText =
+            "Số điện tiêu thụ: " + soDienTieuThu + " kWh";
+          resultElement2.innerText = "Giá điện: " + giaDien + " đ/kWh";
+          resultElement3.innerText = "Thành tiền: " + thanhTien + " đ";
         } else {
-          giaDien = 2000;
-          thanhTien = 50 * 1500 + (soDienTieuThu - 50) * giaDien;
+          resultElement1.innerText = "Nhập không chính xác";
         }
-        document.write("Số điện tiêu thụ: " + soDienTieuThu + " kWh");
-        document.write("Giá điện: " + giaDien + " đ/kWh");
-        document.write("Thành tiền: " + thanhTien + " đ");
-      } else {
-        alert("Nhập không chính xác");
       }
     </script>
   </body>

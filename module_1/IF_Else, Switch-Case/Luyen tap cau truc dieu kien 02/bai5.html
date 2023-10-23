@@ -6,14 +6,27 @@
   </head>
   <body>
     <h1>Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h1>
+    <label>Nhập chiều cao</label>
+    <input type="number" id="chieuCao" /> <br />
+    <label>Nhập đáy</label>
+    <input type="number" id="canhDay" /> <br />
+    <input
+      type="button"
+      value="Tính diện tích tam giác vuông"
+      onclick="tinhDienTich()"
+    />
+    <div id="result"></div>
     <script>
-      let a = parseInt(prompt("nhap chieu cao: "));
-      let b = parseInt(prompt("nhap day: "));
-      if (!isNaN(a) && !isNaN(b)) {
-        let s = (1 / 2) * a * b;
-        document.write("dien tich tam giac vuong la: " + s);
-      } else {
-        alert("Nhập không hợp lệ");
+      function tinhDienTich() {
+        let a = parseInt(document.getElementById("chieuCao").value);
+        let b = parseInt(document.getElementById("canhDay").value);
+        let resultElement = document.getElementById("result");
+        if (!isNaN(a) && !isNaN(b)) {
+          let s = (1 / 2) * a * b;
+          resultElement.innerText = "dien tich tam giac vuong la: " + s;
+        } else {
+          resultElement.innerText = "Nhập không hợp lệ";
+        }
       }
     </script>
   </body>

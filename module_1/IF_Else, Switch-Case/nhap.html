@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính chỉ số cân nặng</title>
+  </head>
+  <body>
+    <h1>Tính chỉ số cân nặng</h1>
+    <label>Nhập cân nặng (kg): </label>
+    <input type="number" id="canNang" /> <br />
+    <label>Nhập chiều cao (m) </label>
+    <input type="number" id="chieuCao" /> <br />
+    <input type="button" value="Kiểm tra" onclick="kiemTra()" />
+    <div id="result"></div>
+    <script>
+      function kiemTra() {
+        let canNang = parseFloat(document.getElementById("canNang").value);
+        let chieuCao = parseFloat(document.getElementById("chieuCao").value);
+        let resultElement = document.getElementById("result");
+        let bmi = canNang / (chieuCao * chieuCao);
+        let;
+      }
+    </script>
+  </body>
+</html>

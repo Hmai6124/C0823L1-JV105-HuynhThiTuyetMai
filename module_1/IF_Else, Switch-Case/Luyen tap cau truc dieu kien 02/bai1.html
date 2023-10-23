@@ -6,14 +6,21 @@
   </head>
   <body>
     <h1>Chuyển từ độ C sang độ F.</h1>
+    <label>Nhập độ C </label>
+    <input type="number" id="doC" />
+    <input type="button" value="Tính độ F" onclick="doF()" />
+    <div id="result"></div>
     <script>
-      let doC = parseFloat(prompt("Nhập độ C"));
-      let doF;
-      if (!isNaN(doC)) {
-        doF = (doC * 9) / 5 + 32;
-        alert("Độ F: " + doF);
-      } else {
-        alert("Nhập không hợp lệ");
+      function doF() {
+        let doC = parseFloat(document.getElementById("doC").value);
+        let doF;
+        let resultElement = document.getElementById("result");
+        if (!isNaN(doC)) {
+          doF = (doC * 9) / 5 + 32;
+          resultElement.innerText = "Độ F: " + doF;
+        } else {
+          resultElement.innerText = "Nhập không hợp lệ";
+        }
       }
     </script>
   </body>

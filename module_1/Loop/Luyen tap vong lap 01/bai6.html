@@ -2,22 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>LTVL-01-Bai6</title>
   </head>
   <body>
+    <h1>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h1>
     <script>
-      let sum = 0;
-      let count = 0;
-      for (let i = 1; count < 30; i++) {
-        if (i % 7 === 0) {
-          sum += i;
-          count++;
+      function tinhTong(count) {
+        let sum = 0;
+
+        let number = 1;
+
+        while (count > 0) {
+          if (number % 7 === 0) {
+            sum += number; // Cộng số chia hết cho 7 vào tổng
+            count--; // Giảm số lượng cần tìm
+          }
+
+          number++; // Tăng số tự nhiên lên 1
         }
+
+        return sum;
       }
-      document.write(
-        "Tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên là: " +
-          sum
-      );
+
+      let c = tinhTong(30);
+      document.write(c); // Hiển thị tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên
     </script>
   </body>
 </html>

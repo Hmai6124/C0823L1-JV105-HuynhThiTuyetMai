@@ -9,13 +9,19 @@
       Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số
       nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
     </h1>
-
+    <label>Nhập số tuổi của một người</label>
+    <input type="number" id="tuoi" /> <br />
+    <input type="button" value="Xem tuổi người này" onclick="tinhTuoi()" />
+    <div id="result"></div>
     <script>
-      let a = parseInt(prompt("Nhập số tuổi của một người "));
-      if (a < 120 && a > 0) {
-        alert("số tuổi của người này là: " + a);
-      } else {
-        alert("đây không phải là tuổi của một người");
+      function tinhTuoi() {
+        let a = parseInt(document.getElementById("tuoi").value);
+        let resultElement = document.getElementById("result");
+        if (a < 120 && a > 0) {
+          resultElement.innerText = "số tuổi của người này là: " + a;
+        } else {
+          resultElement.innerText = "đây không phải là tuổi của một người";
+        }
       }
     </script>
   </body>

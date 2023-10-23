@@ -2,28 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>In dãy Fibo</title>
+    <title>LTVL-01-Bai5</title>
   </head>
   <body>
-    <h1>Dãy Fibonacci</h1>
-    <p>Nhập số lượng Fibo bạn muốn hiển thị</p>
-    <input type="number" id="numinpt" min="1" step="1" value="1" />
-    <button onclick="indayfibo()">Tạo dãy Fibo</button>
-    <p id="result"></p>
+    <h1>In dãy Fibonacci</h1>
     <script>
-      function indayfibo() {
-        var num = parseInt(document.getElementById("numinpt").value);
-        var result = [];
-        var a = 0,
-          b = 1;
-        for (var i = 0; i < num; i++) {
-          result.push(a);
-          var temp = a;
-          a = b;
-          b = temp + b;
+      function inDayFibonacci(n) {
+        let a = 0;
+        let b = 1;
+        console.log(a);
+        if (n > 1) {
+          console.log(b);
+          for (let i = 2; i < n; i++) {
+            let nextNumber = a + b;
+            console.log(c);
+            a = b;
+            b = c;
+          }
         }
-        document.getElementById("result").textContent = result.join(",");
       }
+      let n = 10;
+      inDayFibonacci(n);
     </script>
   </body>
 </html>

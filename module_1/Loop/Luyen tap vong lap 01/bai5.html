@@ -2,22 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>LTVL-01-Bai5</title>
   </head>
   <body>
+    <h1>Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h1>
     <script>
-      let num1 = 0;
-      let num2 = 1;
-      let numNext = 0;
-      let sum = 1;
-      for (let i = 2; i < 20; i++) {
-        numNext = num1 + num2;
-        num1 = num2;
-        num2 = numNext;
+      function tinhTong(n) {
+        let a = 0;
+        let b = 1;
+        let sum = a;
 
-        sum += numNext;
+        for (let i = 2; i <= n; i++) {
+          sum += b;
+
+          let next = a + b;
+          a = b;
+          b = next;
+        }
+
+        return sum;
       }
-      document.write(" tong cua 20 so dau tien fibonacci: " + sum);
+
+      let c = tinhTong(20);
+      document.write(c); // Hiển thị tổng của 20 số đầu tiên trong dãy Fibonacci
     </script>
   </body>
 </html>

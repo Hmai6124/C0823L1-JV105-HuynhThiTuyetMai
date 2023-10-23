@@ -2,35 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>LTVL-01-Bai8</title>
   </head>
   <body>
-    <button id="btn" onclick="choi()">button</button>
+    <h1>Game đoán số</h1>
+    <button id="btn" onclick="doanSo()">Chơi</button>
     <script>
-      function choi() {
-        let from = parseInt(prompt("Khoan so bat dau tu "));
-
-        let comNum = Math.floor(Math.random() * from);
-
-        let userNum;
-        let checkLose = true;
-        for (let i = 0; i < 4; i++) {
-          userNum = parseInt(prompt("Moi ban doan so"));
-          if (userNum === comNum) {
-            alert("Chien thang");
-            checkLose = false;
+      function doanSo() {
+        let number = +prompt(
+          "Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?"
+        );
+        let number_ran = Math.floor(Math.random() * number);
+        console.log(number_ran);
+        let number_check = +prompt("Nhập số bạn đoán");
+        let count = 0;
+        while (number_check !== number_ran) {
+          count++;
+          if (count == 4) {
+            alert("Bạn hết số lần đoán");
             break;
-          } else if (userNum > comNum) {
-            alert("so nhap lon hon vui long nhap lai ");
+          } else if (number_check < number_ran) {
+            alert("Số bạn đoán bé hơn");
           } else {
-            alert("So nhap be hon vui long nhap lai ");
+            alert("Số bạn đoán lớn hơn");
           }
+          number_check = prompt("Nhập số bạn đoán");
         }
-        alert("ban hết số lần đoán");
-        if (checkLose) {
-          document.write("Chuc ban may man lan sau");
+        if (count == 4) {
+          document.write("Bạn hết số lần đoán");
+        } else {
+          document.write("Bạn đã đoán đúng số. Chúc mừng bạn!");
         }
-        console.log(comNum);
       }
     </script>
   </body>

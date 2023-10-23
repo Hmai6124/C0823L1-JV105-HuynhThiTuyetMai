@@ -6,28 +6,47 @@
   </head>
   <body>
     <h1>Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</h1>
+    <label>Số phút đã gọi</label>
+    <input type="number" id="soPhutGoi" /> <br />
+    <label>Số tin nhắn đã nhắn</label>
+    <input type="number" id="soTinNhan" /> <br />
+    <label>Số GB đã dùng</label>
+    <input type="number" id="soGBDuLieu" /> <br />
+    <input
+      type="button"
+      value="Tính cước điện thoại"
+      onclick="tinhCuocDienThoai()"
+    />
+    <div id="result"></div>
+
     <script>
-      let soPhutGoi = parseFloat(prompt("Số phút đã gọi: "));
-      let soTinNhan = parseFloat(prompt("Số tin nhắn đã nhắn: "));
-      let soGBDulieu = parseFloat(prompt("Số GB dữ liệu đã dùng: "));
-      let phiCuocCoBan = 1590;
-      let phiTinNhanVuot = 200;
-      let phiPhutGoiVuot = 1190;
-      let phiDuLieuVuot = 890;
-      let tongCuoc = phiCuocCoBan;
+      function tinhCuocDienThoai() {
+        let soPhutGoi = parseFloat(document.getElementById("soPhutGoi").value);
+        let soTinNhan = parseFloat(document.getElementById("soTinNhan").value);
+        let soGBDuLieu = parseFloat(
+          document.getElementById("soGBDuLieu").value
+        );
+        let resultElement = document.getElementById("result");
+        let phiCuocCoBan = 1590;
+        let phiTinNhanVuot = 200;
+        let phiPhutGoiVuot = 1190;
+        let phiDuLieuVuot = 890;
+        let tongCuoc = phiCuocCoBan;
+        if (soPhutGoi > 100) {
+          tongCuoc += (soPhutGoi - 100) * phiPhutGoiVuot;
+        }
 
-      if (soPhutGoi > 100) {
-        tongCuoc += (soPhutGoi - 100) * phiPhutGoiVuot;
-      }
+        if (soTinNhan > 100) {
+          tongCuoc += (soTinNhan - 100) * phiTinNhanVuot;
+        }
 
-      if (soTinNhan > 100) {
-        tongCuoc += (soTinNhan - 100) * phiTinNhanVuot;
-      }
+        if (soGBDuLieu > 10) {
+          tongCuoc += (soGBDuLieu - 10) * phiDuLieuVuot;
+        }
 
-      if (soGBDuLieu > 10) {
-        tongCuoc += (soGBDuLieu - 10) * phiDuLieuVuot;
+        resultElement.innerText =
+          "Tổng cước điện thoại: " + tongCuoc.toFixed(2);
       }
-      alert("Tổng cước điện thoại: " + tongCuoc.toFixed(2));
     </script>
   </body>
 </html>

@@ -10,12 +10,20 @@
       Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học
       lớp 10.
     </h1>
+    <label>Nhập tuổi của bạn ở đây: </label>
+    <input type="number" id="tuoi" />
+    <input type="button" value="Kết quả" onclick="ketQua()" /> <br />
+    <div id="result"></div>
     <script>
-      let tuoi = parseInt(prompt("Nhập tuổi của bạn ở đây"));
-      if (tuoi >= 16) {
-        alert("Bạn đủ điều kiện vào học lớp 10");
-      } else {
-        alert("Bạn không đủ điều kiện vào học lớp 10");
+      function ketQua() {
+        let tuoi = parseInt(document.getElementById("tuoi").value);
+        let resultElement = document.getElementById("result");
+
+        if (tuoi >= 16) {
+          resultElement.innerText = "Bạn đủ điều kiện để học lớp 10";
+        } else {
+          resultElement.innerText = "Bạn không đủ điều kiện để học lớp 10";
+        }
       }
     </script>
   </body>

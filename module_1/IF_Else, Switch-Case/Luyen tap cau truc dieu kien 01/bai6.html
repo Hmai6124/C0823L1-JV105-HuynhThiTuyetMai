@@ -6,21 +6,28 @@
   </head>
   <body>
     <h1>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</h1>
+    <label>Nhập doanh số tháng này</label>
+    <input type="number" id="mucDoanhSo" /> <br />
+    <input type="button" value="Tính tiền hoa hồng" onclick="tinhHoaHong()" />
+    <div id="result"></div>
     <script>
-      let mucDoanhSo = prompt("Nhập doanh số tháng này: ");
-      let hoaHong;
-      switch (true) {
-        case mucDoanhso < 1000000:
-          hoaHong = mucDoanhSo * (0.5 / 100);
-          break;
-        case mucDoanhso < 5000000:
-          hoaHong = mucDoanhSo * (1 / 100);
-          break;
-        case mucDoanhso < 10000000:
-          hoaHong = mucDoanhSo * (15 / 100);
-          break;
+      function tinhHoaHong() {
+        let mucDoanhSo = parseInt(document.getElementById("mucDoanhSo").value);
+        let hoaHong;
+        let resultElement = document.getElementById("result");
+        switch (true) {
+          case mucDoanhSo < 1000000:
+            hoaHong = mucDoanhSo * (0.5 / 100);
+            break;
+          case mucDoanhSo < 5000000:
+            hoaHong = mucDoanhSo * (1 / 100);
+            break;
+          case mucDoanhSo < 10000000:
+            hoaHong = mucDoanhSo * (15 / 100);
+            break;
+        }
+        resultElement.innerText = "Hoa hồng tháng này của bạn là: " + hoaHong;
       }
-      alert("Hoa hồng tháng này của bạn là: " + hoaHong);
     </script>
   </body>
 </html>

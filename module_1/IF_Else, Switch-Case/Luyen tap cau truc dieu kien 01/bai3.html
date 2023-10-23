@@ -9,14 +9,24 @@
       Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng
       biết số đó là lớn hay nhỏ hơn 0
     </h1>
+    <label
+      >Nhập một số nguyên tôi sẽ cho bạn biết số đó lớn hơn hay nhỏ hơn
+      0:</label
+    >
+    <input type="number" id="so" />
+    <input type="button" value="Kết quả" onclick="ketQua()" />
+    <div id="result"></div>
     <script>
-      let so = parseInt(prompt("nhập vào 1 số nguyên bất kỳ "));
-      if (so === 0) {
-        alert(so + " là số 0");
-      } else if (so > 0) {
-        alert(so + " là số lớn hơn 0");
-      } else {
-        alert(so + " là số bé hơn 0");
+      function ketQua() {
+        let so = parseInt(document.getElementById("so").value);
+        let resultElement = document.getElementById("result");
+        if (so === 0) {
+          resultElement.innerText = so + "là số 0";
+        } else if (so > 0) {
+          resultElement.innerText = so + " là số lớn hơn 0";
+        } else {
+          resultElement.innerText = so + " là số bé hơn 0";
+        }
       }
     </script>
   </body>

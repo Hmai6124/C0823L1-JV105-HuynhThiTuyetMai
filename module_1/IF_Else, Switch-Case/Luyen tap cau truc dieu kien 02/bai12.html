@@ -9,12 +9,28 @@
       Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền
       ban đầu, số tháng cho vay và lãi xuất hàng tháng.
     </h1>
+    <label>Nhập số tiền ban đầu</label>
+    <input type="number" id="tienBanDau"> <br>
+    <label>Nhập số tháng ban đầu
+    <input type="number" id="thangChoVay"> <br>
+    <label >Nhập lãi suất hàng tháng (%)</label>
+    <input type="number" id="laiHangThang"> <br>
+    <input type="button" value="Tính lãi ngân hàng" onclick=tinhLai()>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+    <div id="result4"></div>
+    <div id="result5"></div>
     <script>
-      let soTienBanDau = parseFloat(prompt("Nhập số tiền ban đầu (VNĐ):"));
-      let soThangChoVay = parseInt(prompt("Nhập số tháng cho vay:"));
-      let laiSuatHangThang = parseFloat(
-        prompt("Nhập lãi suất hàng tháng (%):")
-      );
+      function tinhLai(){
+        let soTienBanDau = parseFloat(document.getElementById("tienBanDau").value);
+      let soThangChoVay = parseInt(document.getElementById("thangChoVay").value);
+      let laiSuatHangThang = parseFloat(document.getElementById("laiHangThang").value);
+      let resultElement1 = document.getElementById("result1")
+      let resultElement2 = document.getElementById("result2")
+      let resultElement3 = document.getElementById("result3")
+      let resultElement4 = document.getElementById("result4")
+      let resultElement5 = document.getElementById("result5")
       if (
         !isNaN(soTienBanDau) &&
         !isNaN(soThangChoVay) &&
@@ -27,15 +43,16 @@
           tongTien += laiHangThang;
         }
         let laiTongCong = tongTien - soTienBanDau;
-        document.write("Số tiền ban đầu: " + soTienBanDau + " VNĐ");
-        document.write("Số tháng cho vay: " + soThangChoVay);
-        document.write("Lãi suất hàng tháng: " + laiSuatHangThang * 100 + "%");
-        document.write(
+        resultElement1.innerText = "Số tiền ban đầu: " + soTienBanDau + " VNĐ";
+        resultElement2.innerText = "Số tháng cho vay: " + soThangChoVay;
+        resultElement3.innerText = "Lãi suất hàng tháng: " + laiSuatHangThang * 100 + "%";
+        resultElement4.innerText = 
           "Tổng số tiền sau " + soThangChoVay + " tháng: " + tongTien + " VNĐ"
-        );
-        document.write("Lãi tổng cộng: " + laiTongCong + " VNĐ");
+        ;
+        resultElement5.innerText = "Lãi tổng cộng: " + laiTongCong + " VNĐ";
       } else {
-        document.write("Giá trị không hợp lệ. Vui lòng nhập số hợp lệ.");
+        resultElement1 = "Giá trị không hợp lệ. Vui lòng nhập số hợp lệ.";
+      }
       }
     </script>
   </body>

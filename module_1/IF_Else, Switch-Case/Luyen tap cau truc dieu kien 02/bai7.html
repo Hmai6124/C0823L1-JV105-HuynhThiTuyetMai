@@ -6,23 +6,35 @@
   </head>
   <body>
     <h1>Giải phương trình bậc 2</h1>
+    <label>Nhập a</label>
+    <input type="number" id="a" /> <br />
+    <label>Nhập b</label>
+    <input type="number" id="b" /> <br />
+    <label>Nhập c</label>
+    <input type="number" id="c" /> <br />
+    <input
+      type="button"
+      value="Tính phương trình"
+      onclick="giaiPhuongTrinh()"
+    />
+    <div id="result"></div>
     <script>
-      let a = parseInt(prompt("Nhap a"));
-      let b = parseInt(prompt("Nhap b"));
-      let c = parseInt(prompt("Nhap c"));
+      let a = parseFloat(document.getElementById("a").value);
+      let b = parseFloat(document.getElementById("b").value);
+      let c = parseFloat(document.getElementById("c").value);
       let delta = b * b - 4 * a * c;
       let deta = Math.sqrt(delta);
+      let resultElement = document.getElementById("result");
       if (delta < 0) {
-        document.write("Phương trình vô nghiệm");
+        resultElement.innerText = "Phương trình vô nghiệm";
       } else if (delta == 0) {
-        document.write("Phương trình có nghiệm kép " + -b / (2 * a));
+        resultElement.innerText = "Phương trình có nghiệm kép " + -b / (2 * a);
       } else {
-        document.write(
+        resultElement.innerText =
           "Phương trình có là nghiệm : " +
-            (-b + deta) / (2 * a) +
-            " và " +
-            (-b - deta) / (2 * a)
-        );
+          (-b + deta) / (2 * a) +
+          " và " +
+          (-b - deta) / (2 * a);
       }
     </script>
   </body>

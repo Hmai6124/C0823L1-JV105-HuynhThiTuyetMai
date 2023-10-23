@@ -2,25 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>LTVL-01-Bai3</title>
   </head>
   <body>
+    <h1>Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</h1>
     <script>
-      let number = parseInt(prompt("nhap day so: "));
-      let num1 = 0;
-      let num2 = 1;
-      let numNext = 0;
-      for (let i = 1; i < number; i++) {
-        num1 = num2;
-        num2 = numNext;
-        numNext = num1 + num2;
-        if (numNext % 5 === 0) {
-          document.writeln(
-            numNext + " la so dau tien trong day fibonacci  chia het cho 5"
-          );
-          break;
+      function Fibonaccichiahetcho5() {
+        let a = 0;
+        let b = 1;
+
+        while (true) {
+          if (a % 5 === 0) {
+            return a;
+          }
+
+          let next = a + b; // Tính số Fibonacci tiếp theo
+          a = b; // Cập nhật số Fibonacci thứ nhất
+          b = next; // Cập nhật số Fibonacci thứ hai
         }
       }
+
+      let c = Fibonaccichiahetcho5();
+      document.write(c);
     </script>
   </body>
 </html>

@@ -6,14 +6,20 @@
   </head>
   <body>
     <h1>Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</h1>
+    <label>Nhập cạnh a</label>
+    <input type="number" id="canhA" />
+    <label>Nhập cạnh b</label>
+    <input type="number" id="canhB" />
+    <div id="result"></div>
     <script>
-      let a = parseInt(prompt("nhap canh a: "));
-      let b = parseInt(prompt("nhap canh b: "));
+      let a = parseInt(document.getElementById("canhA").value);
+      let b = parseInt(document.getElementById("canhB").value);
+      let resultElement = document.getElementById("result");
       if (!isNaN(a) && !isNaN(b)) {
         let s = a * b;
-        alert("dien tich hinh chu nhat la: " + s);
+        resultElement.innerText = "dien tich hinh chu nhat la: " + s;
       } else {
-        alert("Nhập không hợp lệ");
+        resultElement.innerText = "Nhập không hợp lệ";
       }
     </script>
   </body>

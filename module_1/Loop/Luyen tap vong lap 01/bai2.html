@@ -2,19 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Nhiệt Độ</title>
+    <title>LTVL-01-Bai2</title>
   </head>
   <body>
+    <h1>
+      Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi
+      người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm
+      nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+    </h1>
     <script>
-      var i = prompt("Nhập nhiệt độ hiện tại");
-      for (; i > 100; ) {
-        alert("Giảm nhiệt độ, nóng vc");
-        break;
-      }
-      for (; i < 20; ) {
-        alert("Tăng nhiệt độ lên, lạnh vc");
-        break;
-      }
+      do {
+        let i = prompt("Nhập nhiệt độ hiện tại: ");
+        if (i > 100) {
+          alert("Giảm nhiệt độ ");
+        } else if (i < 20) {
+          alert("Tăng nhiệt độ");
+        }
+      } while (i > 100 || i < 20);
     </script>
   </body>
 </html>

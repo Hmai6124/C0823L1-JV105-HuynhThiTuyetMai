@@ -6,23 +6,35 @@
   </head>
   <body>
     <h1>Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</h1>
+    <label>Nhập số nguyên thứ nhất: </label>
+    <input type="number" id="a" /> <br />
+    <label>Nhập số nguyên thứ hai: </label>
+    <input type="number" id="b" /> <br />
+    <label>Nhập số nguyên thứ ba: </label>
+    <input type="number" id="c" /> <br />
+    <input type="button" value="Kết quả" onclick="ketQua()" />
+    <div id="result"></div>
+
     <script>
-      let a = +prompt("nhập số nguyên thứ 1 ");
-      let b = +prompt("nhập số nguyên thứ 2 ");
-      let c = +prompt("nhập số nguyên thứ 3 ");
-      let max;
-      max = a;
-      if (max < b) {
-        max = b;
-        if (max < c) {
-          max = c;
-        } else {
-          max = b;
-        }
-      } else {
+      function ketQua() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        let c = parseInt(document.getElementById("c").value);
+        let resultElement = document.getElementById("result");
+        let max;
         max = a;
+        if (max < b) {
+          max = b;
+          if (max < c) {
+            max = c;
+          } else {
+            max = b;
+          }
+        } else {
+          max = a;
+        }
+        resultElement.innerText = "số lớn nhất: " + max;
       }
-      alert("số lớn nhât : " + max);
     </script>
   </body>
 </html>

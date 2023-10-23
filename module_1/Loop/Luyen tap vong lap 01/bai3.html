@@ -2,20 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>LTVL-01-Bai3</title>
   </head>
   <body>
+    <h1>Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h1>
     <script>
-      // const number = parseInt(prompt('nhap so muon hien thi: '));
-      let n1 = 0,
-        n2 = 1,
-        nextTerm;
-      for (let i = 1; i <= 20; i++) {
-        document.write(n1);
-        nextTerm = n1 + n2;
-        n1 = n2;
-        n2 = nextTerm;
+      function fibonacci(n) {
+        let a = 0;
+        let b = 1;
+        document.write(a);
+        for (let i = 2; i <= n; i++) {
+          document.write(b);
+          let next = a + b;
+          a = b;
+          b = next;
+        }
       }
+      fibonacci(20);
     </script>
   </body>
 </html>

@@ -8,18 +8,34 @@
     <h1>
       Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.
     </h1>
+    <label>Nhập cạnh a</label>
+    <input type="number" id="a" /><br />
+    <label>Nhập cạnh b</label>
+    <input type="number" id="b" /><br />
+    <label>Nhập cạnh c</label>
+    <input type="number" id="c" /><br />
+    <input
+      type="button"
+      value="Kiểm tra có phải là cạnh của một tam giác hay không"
+      onclick="kiemTra()"
+    />
+    <div id="result"></div>
+
     <script>
-      let a = parseFloat(prompt("Nhập cạnh a"));
-      let b = parseFloat(prompt("Nhập cạnh b"));
-      let c = parseFloat(prompt("Nhập cạch c"));
-      if (a > 0 && b > 0 && c > 0) {
-        if (a + b > c && b + c > a && a + c > b) {
-          alert("Đây là tam giác");
+      function kiemTra() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let c = parseFloat(document.getElementById("c").value);
+        let resultElement = document.getElementById("result");
+        if (a > 0 && b > 0 && c > 0) {
+          if (a + b > c && b + c > a && a + c > b) {
+            resultElement.innerText = "Đây là tam giác";
+          } else {
+            resultElement.innerText = "Đây không phải là tam tam";
+          }
         } else {
-          alert("Đây không phải là tam tam");
+          resultElement.innerText = "Đây không phải là tam giác";
         }
-      } else {
-        alert("Đây không phải là tam giác");
       }
     </script>
   </body>

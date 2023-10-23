@@ -2,13 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Hộp thoại thông báo</title>
+    <title>LTVL-01-Bai1</title>
   </head>
   <body>
+    <h1>
+      Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại
+      thông báo là đã hoàn thành.
+    </h1>
+    <div id="result"></div>
     <script>
-      for (i = 1; i < 100; i++) {
-        alert(i);
+      let resultElement = document.getElementById("result");
+      let numbers = "";
+
+      for (let i = 1; i < 100; i++) {
+        numbers += "số cần hiển thị là " + i + "<br>";
       }
+
+      resultElement.innerHTML = numbers;
       alert("Đã hoàn thành");
     </script>
   </body>

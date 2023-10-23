@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
     <title>Tính giai thừa</title>
   </head>
   <body>
-    <h1>Tính Giai Thừa</h1>
     <p>Nhập số nguyên dương tính giai thừa:</p>
-    <input type="number" id="so" min="1" step="1" value="1" />
-    <button onclick="tinhgiaithua()">Tính giai thừa</button>
-    <p id="result"></p>
-    <script>
-      function tinhgiaithua() {
-        var so = parseInt(document.getElementById("so").value);
-        var result = 1;
+    <input type="number" id="so" />
+    <button onclick="tinhGiaiThua()">Tính giai thừa</button>
+    <div id="result"></div>
 
-        for (var i = 1; i <= so; i++) {
+    <script>
+      function tinhGiaiThua() {
+        let so = parseInt(document.getElementById("so").value);
+        let result = 1;
+        let resultElement = document.getElementById("result");
+
+        for (let i = 2; i <= so; i++) {
           result *= i;
         }
-        document.getElementById(
-          "result"
-        ).textContent = `Giai thừa của ${so} là: ${result}`;
+        resultElement.innerText = "Giai thừa của số bạn nhập là: " + result;
       }
     </script>
   </body>
