@@ -5,19 +5,41 @@
     <title></title>
   </head>
   <body>
+    <h1></h1>
+    <label>Nhập số tiền ban đầu"</label>
+    <input type="number" id="soTienBanDau" /> <br />
+    <input
+      type="number"
+      id="soThangChoVay"
+      placeholder="Nhập số tháng cho vay"
+    />
+    <input type="number" id="laiHangThang" placeholder="Nhập lãi hàng tháng" />
+    <input type="button" value="Tính tiền lãi" onclick="tinhLai()" />
+    <div id="result"></div>
+
     <script>
-      let inputMoney = parseInt(prompt("Nhập số tiền ban đầu"));
-      let inputMonth = parseInt(prompt("Nhập số tháng cho vay"));
-      let inputInterestRate = parseInt(prompt("Nhập lãi xuất hàng tháng"));
+      function tinhLai() {
+        let soTienBanDau = parseInt(
+          document.getElementById("soTienBanDau").value
+        );
+        let soThangChoVay = parseInt(
+          document.getElementById("soThangChoVay").value
+        );
+        let laiHangThang = parseFloat(
+          document.getElementById("laiHangThang").value
+        );
+        let resultElement = document.getElementById("result");
 
-      let monthlyInterestRate = inputInterestRate / 100;
+        let tongTienLai = 0;
+        for (let i = 1; i <= soThangChoVay; i++) {
+          let tienLai = soTienBanDau * (laiHangThang / 100);
+          tongTienLai += tienLai;
+          soTienBanDau += tienLai;
+        }
 
-      for (let i = 0; i < inputMonth; i++) {
-        inputMoney += inputMoney + monthlyInterestRate;
+        resultElement.innerText =
+          "Tiền lãi: " + tongTienLai.toFixed(2) + " VND";
       }
-      alert(
-        `Số tiền cuối cùng sau ${inputMonth} tháng là: ${inputMoney.toFixed(2)}`
-      );
     </script>
   </body>
 </html>

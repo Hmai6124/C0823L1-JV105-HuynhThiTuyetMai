@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zombie Game</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <script>
+      // Khởi tạo Canvas
+      var canvas = document.getElementById("gameCanvas");
+      var ctx = canvas.getContext("2d");
+
+      // Thiết lập kích thước màn hình
+      var screen_width = canvas.width;
+      var screen_height = canvas.height;
+
+      // Mảng chứa zombie
+      var zombies = [];
+
+      // Class Zombie
+      class Zombie {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.speedX = Math.random() * 2 - 1;
+          this.speedY = Math.random() * 2 - 1;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+
+          if (this.x < 0 || this.x > screen_width) {
+            this.speedX *= -1;
+          }
+
+          if (this.y < 0 || this.y > screen_height) {
+            this.speedY *= -1;
+          }
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
+          ctx.fillStyle = "red";
+          ctx.fill();
+          ctx.closePath();
+        }
+      }
+
+      // Tạo ra 10 zombie ngẫu nhiên
+      for (var i = 0; i < 10; i++) {
+        var x = Math.random() * screen_width;
+        var y = Math.random() * screen_height;
+        var zombie = new Zombie(x, y);
+        zombies.push(zombie);
+      }
+
+      // Hàm game loop
+      function gameLoop() {
+        // Xóa màn hình
+        ctx.clearRect(0, 0, screen_width, screen_height);
+
+        // Cập nhật và vẽ zombie
+        for (var i = 0; i < zombies.length; i++) {
+          var zombie = zombies[i];
+          zombie.update();
+          zombie.draw();
+        }
+
+        // Gọi lại hàm game loop
+        requestAnimationFrame(gameLoop);
+      }
+
+      // Khởi động game
+      gameLoop();
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #gameCanvas {
+        display: block;
+        margin: 0 auto;
+        background-color: #000;
+      }
+    </style>
+  </body>
+</html>
