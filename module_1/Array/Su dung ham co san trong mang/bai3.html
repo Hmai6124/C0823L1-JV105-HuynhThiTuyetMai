@@ -13,21 +13,21 @@
       fOX'.
     </p>
     <script>
-      function chuyen_doi_chu_hoa(chuoi) {
-        let chuoi_chuyen_doi = "";
+      function chuyenDoiChuHoa(chuoi) {
+        let chuoiChuyenDoi = "";
         for (let i = 0; i < chuoi.length; i++) {
-          let ky_tu = chuoi[i];
-          if (ky_tu >= "a" && ky_tu <= "z") {
-            ky_tu = ky_tu.toUpperCase();
+          let kyTu = chuoi[i];
+          if (kyTu >= "a" && kyTu <= "z") {
+            kyTu = kyTu.toUpperCase(); // Chuyển đổi ký tự thành ký tự in hoa nếu nằm trong khoảng a-z
           }
-          chuoi_chuyen_doi += ky_tu;
+          chuoiChuyenDoi += kyTu; // Thêm ký tự vào chuỗi kết quả
         }
-        return chuoi_chuyen_doi;
+        return chuoiChuyenDoi; // Trả về chuỗi đã chuyển đổi
       }
 
-      let chuoi = prompt("Nhập vào một chuỗi: ");
-      let chuoi_chuyen_doi = chuyen_doi_chu_hoa(chuoi);
-      document.write("Kết quả: " + chuoi_chuyen_doi);
+      let chuoi = prompt("Nhập vào một chuỗi: "); // Yêu cầu người dùng nhập vào một chuỗi bằng cách sử dụng hàm prompt()
+      let chuoiChuyenDoi = chuyenDoiChuHoa(chuoi); // Gọi hàm chuyenDoiChuHoa() để chuyển đổi chuỗi thành chuỗi ký tự in hoa
+      document.write("Kết quả: " + chuoiChuyenDoi); // In kết quả ra trang HTML bằng cách sử dụng document.write()
     </script>
   </body>
 </html>
