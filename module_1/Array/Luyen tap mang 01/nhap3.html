@@ -7,32 +7,24 @@
   </head>
   <body>
     <p>
-      Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương
-      trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí
-      của phần tử đó.
+      Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất
+      trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
     </p>
     <script>
-      function timPhanTuLonNhatVaViTri() {
-        let mang = [];
-        let max = -Infinity;
-        let viTriMax = 0;
+      let mang = []
+      let max = -Infinity;
+      let bnso = parseInt(prompt("Nhập số lượng phẩn tử trong mảng mà bạn muốn: "))
 
-        for (let i = 1; i < 10; i++) {
-          let soNguyen = parseInt(prompt("Nhập số nguyên thứ " + i));
-          mang.push(soNguyen);
-        }
-
-        for (let i = 0; i < mang.length; i++) {
-          if (mang[i] > max) {
-            max = mang[i];
-            viTriMax = i;
-          }
-        }
-
-        document.write("Số có giá trị lớn nhất là: " + max + "<br>");
-        document.write("Vị trí của số đó là: " + viTriMax);
+      for(let i = 0;i < bnso;i++){
+        let soNguyen = parseInt(prompt("Nhập số nguyên thứ" + i))
+        mang.push(soNguyen)
       }
-      timPhanTuLonNhatVaViTri();
+
+      for(let i = 0; i < mang.length; i++){
+        
+      }
+
+      
     </script>
   </body>
 </html>
