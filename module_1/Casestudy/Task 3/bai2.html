@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 2</title>
+  </head>
+  <body>
+    <p>
+      Cho 2 mảng A và B chứa số nguyên. Tìm ra một mảng đã được sắp xếp chứa các
+      phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A Chú ý các phần
+      tử giống nhau chỉ tính là 1 lần xuất hiện Ví dụ: A=[7,2,5,3,5,3] và
+      B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]
+    </p>
+    <script>
+      function findMissingValue(arrayA, arrayB) {
+        const setA = new Set(arrayA);
+
+        const setB = new Set(arrayB);
+
+        const missingValue = [];
+
+        for (const value of setB) {
+          if (!setA.has(value)) {
+            missingValue.push(value);
+          }
+        }
+
+        return missingValue.sort((a, b) => a - b);
+      }
+
+      const inputA = prompt("Nhập số vào đây").toLowerCase();
+      const inputB = prompt("Nhập số vào đây").toLowerCase();
+
+      const arrayA = inputA.split(",").map(Number);
+      const arrayB = inputB.split(",").map(Number);
+      const missingValueResult = findMissingValue(arrayA, arrayB);
+
+      document.write(`Giá trị A : ${arrayA}` + "<br>");
+      document.write(`Giá trị B: ${arrayB}` + "<br>");
+      document.write(`Giá trị còn thiếu là: ${missingValueResult}`);
+    </script>
+  </body>
+</html>

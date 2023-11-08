@@ -12,16 +12,28 @@
       Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
       Hiển thị mảng c.
     </p>
-    
+
     <script>
-        let mangA = []
-        let mangB = []
-        let mangC = []
+      let mangA = [];
+      let mangB = [];
+      let mangC = [];
 
-        let soLuong = 10
-         
+      let soLuong = 10;
 
-        
+      document.write("Nhập số mảng A");
+      for (let i = 0; i < soLuong; i++) {
+        let soNguyen = parseInt(
+          prompt("Nhập số nguyên thứ " + (i + 1) + " của mảng a: ")
+        );
+        mangA.push(soNguyen);
+      }
+
+      document.write("Nhập số mảng B");
+      for (let i = 0; i < soLuong; i++) {
+        let soNguyen = parseInt(
+          prompt("Nhập số nguyên thứ " + (i + 1) + " của mảng b: ")
+        );
+      }
     </script>
   </body>
 </html>
