@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5 - Bài 2</title>
+  </head>
+  <body>
+    <p>
+      Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố
+      có trong mảng đó.
+    </p>
+
+    <script>
+      function isPrime(number) {
+        if (number < 2) {
+          return false;
+        }
+
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      function countAndListPrimes(matrix) {
+        let count = 0;
+        const primes = [];
+
+        for (let i = 0; i < matrix.length; i++) {
+          for (let j = 0; j < matrix[i].length; j++) {
+            const number = matrix[i][j];
+
+            if (isPrime(number)) {
+              count++;
+              primes.push(number);
+            }
+          }
+        }
+
+        console.log("Các số nguyên tố trong mảng:", primes);
+        console.log("Số lượng số nguyên tố trong mảng:", count);
+      }
+
+      // Mảng 2 chiều
+      const matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+
+      // Liệt kê và đếm các số nguyên tố trong mảng
+      countAndListPrimes(matrix);
+    </script>
+  </body>
+</html>

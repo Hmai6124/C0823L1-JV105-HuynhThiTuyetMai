@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4 - Bài 2</title>
+  </head>
+  <body>
+    <p>
+      Cho xâu kí tự. Hãy đếm số lượng ký tự khác nhau trong xâu đó Ví dụ: s =
+      "cabca", thì kết quả differentSymbolsNaive(s) = 3. ⇨ Có 3 ký tự khác nhau
+      là a, b và c.
+    </p>
+
+    <script>
+      let s = prompt("Nhập kí tự vào đây");
+      const uniqueChars = new Set();
+
+      function differentSymbolsNaive(s) {
+        for (let i = 0; i < s.length; i++) {
+          const currentChar = s[i];
+          if (!uniqueChars.has(currentChar)) {
+            uniqueChars.add(currentChar);
+          }
+        }
+      }
+
+      differentSymbolsNaive(s);
+
+      const uniqueCharCount = uniqueChars.size;
+      console.log(uniqueCharCount);
+    </script>
+  </body>
+</html>

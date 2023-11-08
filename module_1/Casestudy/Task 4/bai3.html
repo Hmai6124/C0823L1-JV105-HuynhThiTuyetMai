@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4 - Bài 3</title>
+  </head>
+  <body>
+    <p>
+      Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng. Ví dụ: s1 =
+      "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3. ⇨ 2
+      xâu s1 và s2 có 3 kí tự chung: 2 ký tự 'a' và 1 kí tự 'c'.
+    </p>
+
+    <script>
+        let s1 = prompt("Nhập kí tự vào đây")
+        let s2 = prompt("Nhập kí tự vào đây")
+      function commonCharacterCount(s1, s2) {
+        const count1 = countCharacters(s1); 
+        const count2 = countCharacters(s2); 
+        let commonCount = 0;
+        
+        for (const char in count1) {
+          if (count2[char]) {
+           
+            commonCount += Math.min(count1[char], count2[char]);
+          }
+        }
+
+        return commonCount;
+      }
+
+      function countCharacters(str) {
+        const count = {};
+        for (let i = 0; i < str.length; i++) {
+          const char = str[i];
+          count[char] = (count[char] || 0) + 1;
+        }
+        return count;
+      }
+
+      const result = commonCharacterCount(s1, s2);
+      console.log(result); 
+    </script>
+  </body>
+</html>
